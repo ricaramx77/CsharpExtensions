@@ -30,5 +30,11 @@ namespace StringExtensionsDemo
             if (string.IsNullOrWhiteSpace(input)) return 0;
             return input.Split(new[] { ' ', '\t', '\n' }, StringSplitOptions.RemoveEmptyEntries).Length;
         }
+
+        public static string CapitalizeFirstLetter(this string input)
+        {
+            if (string.IsNullOrEmpty(input)) return input;
+            return char.ToUpper(input[0]) + input.Substring(1);
+        }
     }
 }
